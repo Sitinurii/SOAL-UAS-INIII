@@ -1,0 +1,31 @@
+import random
+
+# Membuat dan mengacak list 1 sampai 50
+data = list(range(1, 51))
+random.shuffle(data)
+
+while True:
+    # Menampilkan menu input
+    print("\nMenu:")
+    print("1. Lihat list bilangan acak")
+    print("2. Urutkan list dengan Bubble Sort")
+    print("3. Keluar")
+
+    pilihan = input("Masukkan pilihan (1/2/3): ")
+
+    if pilihan == '1':
+        print(f"List bilangan acak: {data}")
+    elif pilihan == '2':
+        # Bubble Sort
+        print(f"List sebelum diurutkan: {data}")
+        for i in range(len(data)-1):
+            for j in range(len(data)-i-1):
+                if data[j] > data[j+1]:
+                    data[j], data[j+1] = data[j+1], data[j]
+            print(f"Iterasi {i+1}: {data}")  # Mencetak list setelah setiap iterasi
+        print(f"List setelah diurutkan: {data}")
+    elif pilihan == '3':
+        print("Terima kasih! Program selesai.")
+        break  # Keluar dari loop
+    else:
+        print("Pilihan tidak valid. Silakan pilih yang ada aja ya")
